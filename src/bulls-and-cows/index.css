@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.input-box__digit {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  padding: 0;
+  line-height: 2em;
+  vertical-align: middle;
+  border: 1px solid silver;
+  outline: none;
+  caret-color: transparent;
+}
+
+.input-box__digit:focus {
+  background-color: #eee;
+  /* outline: steelblue auto 2px; */
+}
+
+.input-box__try {
+  display: inline-block;
+  height: 2em;
+  border: none;
+  background-color: steelblue;
+  color: white;
+  outline: none;
+}
+
+.input-box__try:focus {
+  background-color: skyblue;
+}
