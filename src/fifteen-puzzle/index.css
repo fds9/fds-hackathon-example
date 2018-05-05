@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+}
+
+.col {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  margin: 2px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.col:hover {
+  background-color: green;
+}
+
+.col--blank {
+  background-color: silver;
+}

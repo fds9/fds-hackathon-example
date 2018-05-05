@@ -23,7 +23,8 @@ function indexToCoord(index) {
 }
 
 class FifteenPuzzle {
-  constructor() {
+  constructor({debug = true} = {}) {
+    this.debug = debug;
     this.generateBoard();
   }
 
@@ -63,21 +64,21 @@ class FifteenPuzzle {
     let moved = false;
     let moves = 0;
     if (blankCoord.row === targetCoord.row) {
-      console.log('row change');
+      this.debug && console.log('row change');
       const row = this.getRow(blankCoord.row);
       const newRow = nudge(row, targetCoord.col);
       this.setRow(blankCoord.row, newRow);
       moved = true;
       moves = Math.abs(blankCoord.col - targetCoord.col);
     } else if (blankCoord.col === targetCoord.col) {
-      console.log('col change');
+      this.debug && console.log('col change');
       const col = this.getCol(blankCoord.col);
       const newCol = nudge(col, targetCoord.row);
       this.setCol(blankCoord.col, newCol);
       moved = true;
       moves = Math.abs(blankCoord.row - targetCoord.row);
     }
-    this.prettyPrint()
+    this.debug && this.prettyPrint()
     return {
       moved,
       moves,
