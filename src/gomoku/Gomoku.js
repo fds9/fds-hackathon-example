@@ -1,6 +1,8 @@
 class Gomoku {
   blackOrWhite = true;
+  winner = null;
   constructor({debug = true} = {}) {
+    this.debug = debug;
     this.generateBoard();
   }
   generateBoard() {
@@ -10,16 +12,17 @@ class Gomoku {
   }
   nextTurn({row, col}) {
     let validMove = false;
-    if (this.board[row][col] == null) {
+    if (!this.winner && this.board[row][col] === null) {
       this.board[row][col] = this.blackOrWhite;
       this.blackOrWhite = !this.blackOrWhite;
       validMove = true;
+      this.winner = this.checkWinner();
+      this.debug && this.prettyPrint();
     }
-    this.debug && this.prettyPrint();
     return {
       validMove,
-      winner: this.checkWinner()
-    }
+      winner: this.winner
+    };
   }
   prettyPrint() {
     for (let row of this.board) {
