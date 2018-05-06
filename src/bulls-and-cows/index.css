@@ -1,17 +1,39 @@
+html, body {
+  font-family: sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
 
+.main {
+  width: 300px;
+  margin: 30px auto;
+}
+
+.main__title {
+  text-align: center;
+  font-size: 2em;
+}
+
+.input-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .input-box__digit {
-  width: 2em;
-  height: 2em;
+  width: 2rem;
+  height: 2rem;
   text-align: center;
   padding: 0;
-  line-height: 2em;
+  line-height: 2rem;
+  font-size: 20px;
   vertical-align: middle;
   border: 1px solid silver;
   outline: none;
   caret-color: transparent;
+  margin-right: 0.5rem;
 }
 
 .input-box__digit:focus {
@@ -19,15 +41,52 @@
   /* outline: steelblue auto 2px; */
 }
 
-.input-box__try {
+.input-box__try, .input-box__reset {
   display: inline-block;
-  height: 2em;
+  height: 2rem;
+  font-size: 1rem;
+  padding: 0 1rem;
   border: none;
   background-color: steelblue;
   color: white;
   outline: none;
 }
 
-.input-box__try:focus {
+.input-box__try {
+  margin-right: 0.5rem;
+}
+
+.input-box__try:focus, .input-box__reset:focus {
   background-color: skyblue;
+}
+
+.turn-list__turn-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.turn-item__turn-digits {
+  display: flex;
+  align-items: center;
+}
+
+.turn-digits__digit {
+  /* FIXME: .input-box__digit 중복 */
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  padding: 0;
+  line-height: 2rem;
+  font-size: 20px;
+  vertical-align: middle;
+  border: 1px solid silver;
+  outline: none;
+  caret-color: transparent;
+  margin-left: 0.5rem;
+}
+
+.answer {
+  margin-top: 1rem;
 }
