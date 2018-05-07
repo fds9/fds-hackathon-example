@@ -23,9 +23,15 @@ function indexToCoord(index) {
 }
 
 class FifteenPuzzle {
-  constructor({debug = true} = {}) {
+  totalMoves = 0;
+
+  constructor({debug = true, board = null} = {}) {
     this.debug = debug;
-    this.generateBoard();
+    if (board) {
+      this.board = board
+    } else {
+      this.generateBoard();
+    }
   }
 
   generateBoard() {
@@ -78,10 +84,12 @@ class FifteenPuzzle {
       moved = true;
       moves = Math.abs(blankCoord.row - targetCoord.row);
     }
+    this.totalMoves += moves;
     this.debug && this.prettyPrint()
     return {
       moved,
       moves,
+      totalMoves: this.totalMoves,
       clear: this.hasWon()
     };
   }
