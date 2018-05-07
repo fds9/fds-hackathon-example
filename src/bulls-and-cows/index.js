@@ -86,6 +86,7 @@ inputBoxEl.addEventListener('submit', e => {
 });
 
 resetButtonEl.addEventListener('click', e => {
+  e.preventDefault();
   game = new BullsAndCows();
   digitInputEls.forEach(el => {
     el.value = '';
