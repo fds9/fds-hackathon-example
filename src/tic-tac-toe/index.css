@@ -1,0 +1,31 @@
+.board__row {
+  display: flex;
+}
+
+.board__col {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  font-family: monospace;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.board__col:hover {
+  background-color: skyblue;
+}
+
+.board__col.board__col--cross::before {
+  display: inline;
+  content: 'X';
+}
+
+.board__col.board__col--circle::before {
+  display: inline;
+  content: 'O';
+}

@@ -73,3 +73,6 @@ class TicTacToe {
     }
   }
 }
+
+export default TicTacToe;
+export { CROSS, CIRCLE };
